@@ -6,6 +6,12 @@ A system for automatically staging all cancer types using the AJCC 8th Edition s
 
 This project implements an AI-powered system for analyzing medical notes related to all cancer types and determining the appropriate clinical and pathologic staging according to the American Joint Committee on Cancer (AJCC) 8th Edition staging system. The system uses CrewAI to create specialized agents that work together to identify cancer types, analyze staging criteria, calculate stages, and generate comprehensive reports.
 
+## Demo Video
+
+[![Adult Cancer Staging System Demo](https://img.youtube.com/vi/oO9TkM2cQvM/0.jpg)](https://youtu.be/oO9TkM2cQvM)
+
+Watch a demonstration of the Adult Cancer Staging System in action.
+
 ## Features
 
 - Automatic identification of cancer types from medical notes
