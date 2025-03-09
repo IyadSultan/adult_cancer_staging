@@ -1,157 +1,124 @@
-# Pediatric Cancer Staging Module
+# Adult Cancer Staging System
 
-This module analyzes medical notes to identify cancer types and determine appropriate staging using the Toronto staging system for pediatric cancers.
+A system for automatically staging all cancer types using the AJCC 8th Edition staging system and CrewAI agents.
+
+## Overview
+
+This project implements an AI-powered system for analyzing medical notes related to all cancer types and determining the appropriate clinical and pathologic staging according to the American Joint Committee on Cancer (AJCC) 8th Edition staging system. The system uses CrewAI to create specialized agents that work together to identify cancer types, analyze staging criteria, calculate stages, and generate comprehensive reports.
 
 ## Features
 
-- Identifies the cancer type from medical notes
-- Extracts EMR stage if mentioned in the notes
-- Analyzes clinical criteria for staging based on the Toronto system
-- Calculates the appropriate stage based on identified criteria
-- Generates explanations for staging decisions
-- Outputs results to CSV files
-
-## Requirements
-
-- Python 3.8+
-- OpenAI API key
-- Required packages (see requirements.txt)
+- Automatic identification of cancer types from medical notes
+- Verification that the identified cancer exists in the AJCC 8th Edition staging system
+- Extraction of TNM values from medical notes
+- Analysis of clinical and pathologic staging criteria
+- Calculation of clinical and pathologic stages based on AJCC 8th Edition
+- Generation of comprehensive staging reports
+- Support for processing single or multiple medical notes
+- Results saved to CSV format with comprehensive information
+- Skip staging for cancer types not covered by AJCC 8th Edition
 
 ## Installation
 
-1. Clone this repository
-2. Create a virtual environment (if not already created):
-   ```
-   python -m venv venv
-   ```
-3. Activate the virtual environment:
-   ```
-   # Windows
-   venv\Scripts\activate
-   
-   # Linux/Mac
-   source venv/bin/activate
-   ```
-4. Install the required packages:
-   ```
-   pip install -r requirements.txt
-   ```
-5. Set up your OpenAI API key as an environment variable:
-   ```
-   # Windows
-   set OPENAI_API_KEY=your_api_key_here
-   
-   # Linux/Mac
-   export OPENAI_API_KEY=your_api_key_here
-   ```
-   Alternatively, create a `.env` file in the project root with:
-   ```
-   OPENAI_API_KEY=your_api_key_here
-   ```
+1. Clone this repository:
+```
+git clone https://github.com/yourusername/adult_cancer_staging.git
+cd adult_cancer_staging
+```
+
+2. Set up a virtual environment:
+```
+python -m venv venv
+venv\Scripts\activate  # Windows
+source venv/bin/activate  # Linux/Mac
+```
+
+3. Install dependencies:
+```
+uv pip install -r requirements.txt
+```
+
+4. Set up your OpenAI API key:
+```
+python setup_api_key.py
+```
 
 ## Usage
 
-### Using the Example Script
-
-The easiest way to use the module is with the provided example script:
+### Process a single medical note
 
 ```
-# Process the example medical note
-python run_example.py
-
-# Process a different medical note
-python run_example.py --note path/to/medical_note.txt --output results.csv
-
-# Use a different staging data file
-python run_example.py --staging_data path/to/staging_data.json
+python run_hn_staging.py --note path/to/your/note.txt --output results.csv
 ```
 
-### Using the Main Script
-
-For more options, you can use the main script:
+### Process multiple medical notes in a directory
 
 ```
-python main.py --note path/to/medical_note.txt --output results.csv --staging_data path/to/staging_data.json
+python run_hn_staging.py --note_dir path/to/notes/directory --output results.csv
 ```
 
-### Command-line Arguments
+### Options
 
-#### run_example.py
-- `--note`: Path to the medical note to process (default: example.txt)
+- `--note`: Path to a single medical note to process (default: hn_example.txt)
+- `--note_dir`: Path to a directory containing multiple medical notes to process
 - `--output`: Path to save the CSV results (default: results.csv)
-- `--staging_data`: Path to the Toronto staging data file (default: toronoto_staging.json)
-
-#### main.py
-- `--note`: Path to the medical note to process (default: example.txt)
-- `--staging_data`: Path to the Toronto staging JSON file (default: toronoto_staging.json)
-- `--output`: Path to save the CSV results (default: results.csv)
+- `--staging_data`: Path to the AJCC staging data file (default: AJCC8.json)
 - `--model`: OpenAI model to use (default: gpt-4o-mini)
-
-## Staging Data
-
-The module uses the Toronto staging system for pediatric cancers stored in `toronoto_staging.json`. This file contains comprehensive staging information for 15 different pediatric cancer types, with criteria, stages, and definitions for each type.
-
-The module will automatically attempt to fix any JSON syntax errors if they are encountered when loading the staging data.
-
-## Output Format
-
-The module produces a CSV file with the following columns:
-
-- `file_name`: Name of the processed medical note file
-- `emr_stage`: Stage mentioned in the medical note (if any)
-- `calculated_stage`: Stage calculated based on the Toronto staging system
-- `explanation`: Explanation for the calculated stage
 
 ## Project Structure
 
-```
-.
-├── main.py                  # Main script to run the module
-├── run_example.py           # Simplified script for easy testing
-├── requirements.txt         # Required packages
-├── README.md                # This file
-├── project_status.md        # Current project status
-├── example.txt              # Example medical note
-├── toronoto_staging.json    # Toronto staging system data
-├── .env.example             # Example environment file
-└── src/                     # Source code
-    ├── __init__.py          # Package initialization
-    ├── agents.py            # Agent definitions
-    ├── tasks.py             # Task definitions
-    └── staging_module.py    # Main staging module
-```
+- `src/`: Source code directory
+  - `adult_staging_module.py`: Main module for adult cancer staging
+  - `adult_agents.py`: Definitions of CrewAI agents for cancer staging
+  - `adult_tasks.py`: Definitions of CrewAI tasks for cancer staging
+- `AJCC8.json`: AJCC 8th Edition staging data
+- `hn_example.txt`: Example cancer medical note
+- `run_hn_staging.py`: Script to run the staging system
+- `setup_api_key.py`: Script to set up the OpenAI API key
+- `requirements.txt`: Required Python packages
+- `project_status.md`: Current status of the project
 
 ## How It Works
 
-The module uses a series of AI agents, implemented with the CrewAI framework, to process medical notes:
+1. **Cancer Identification**: The system first analyzes the medical note to identify the specific cancer type and extract any TNM values. It verifies that the cancer exists in the AJCC 8th Edition before proceeding.
+2. **Criteria Analysis**: If the cancer is supported, the system analyzes the note to identify which staging criteria are present for the identified cancer type.
+3. **Stage Calculation**: Based on the identified criteria, the system calculates both the clinical and pathologic stages.
+4. **Report Generation**: Finally, it generates a comprehensive staging report suitable for inclusion in a patient's medical record.
 
-1. **Cancer Identifier Agent**: Identifies the cancer type and any EMR stage mentioned
-2. **Criteria Analyzer Agent**: Identifies which staging criteria are present in the notes
-3. **Stage Calculator Agent**: Calculates the appropriate stage based on identified criteria
-4. **Report Generator Agent**: Generates explanations for staging decisions
+## CSV Output Fields
 
-Each agent performs a specific task in the staging workflow, working together to produce accurate staging results.
+The system generates a CSV file with the following fields:
+- Medical Note: The name of the processed note
+- Date of Extraction: When the processing was performed
+- Disease: The identified cancer type
+- Category: The AJCC category the cancer belongs to
+- System: "AJCC8 system"
+- TNM Values: The TNM values extracted from the note
+- Extracted Stage: The stage directly extracted from the note
+- Clinical Stage: The calculated clinical stage
+- Pathologic Stage: The calculated pathologic stage
+- AI Stage: Combined representation of clinical and pathologic stages
+- Proceed with Staging: Whether staging was performed (Yes/No)
+- Explanation: Detailed explanation of how the stage was determined
+- Report: Comprehensive staging report
 
-## Supported Cancer Types
+## Dependencies
 
-The module supports staging for all pediatric cancers in the Toronto staging system, including:
-
-- Acute Lymphoblastic Leukemia
-- Hodgkin Lymphoma
-- Non-Hodgkin Lymphoma
-- Neuroblastoma
-- Wilms Tumor (Renal Tumors)
-- Rhabdomyosarcoma
-- Non-Rhabdo Soft Tissue Sarcoma
-- Bone Tumors
-- Retinoblastoma
-- Hepatoblastoma
-- Testicular Germ Cell Tumor
-- Ovarian Germ Cell Tumor
-- Astrocytoma
-- Medulloblastoma (CNS Embryonal Tumors)
-- Ependymoma
+- Python 3.8+
+- CrewAI
+- OpenAI API
+- pandas
+- python-dotenv
+- tqdm
+- jsonschema
+- colorama
 
 ## License
 
-MIT 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- American Joint Committee on Cancer (AJCC) for the staging system
+- CrewAI for the agent framework
+- OpenAI for the language models 

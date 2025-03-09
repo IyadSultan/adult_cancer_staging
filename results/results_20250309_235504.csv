@@ -1,0 +1,73 @@
+Medical Note,Date of Extraction,Disease,Category,System,TNM Values,Extracted Stage,Clinical Stage,Pathologic Stage,AI Stage,Proceed with Staging,Explanation,Report
+hn_example.txt,2025-03-09,Squamous Cell Carcinoma of the Larynx,Laryngeal Carcinoma,AJCC8 system,cT2N0M0,cT2N0M0,"cT2N0M0, Stage II Squamous Cell Carcinoma of the Larynx (Glottis)",Insufficient information,"Clinical: cT2N0M0, Stage II Squamous Cell Carcinoma of the Larynx (Glottis), Pathologic: Insufficient information",Yes,"The clinical stage has been determined based on the AJCC 8th Edition staging criteria for Squamous Cell Carcinoma of the Larynx. The criteria are evaluated as follows:
+
+1. **Primary Tumor (T):** The patient presents with a clinical classification of T2. The medical note indicates that there is a 2.7 cm mass involving the right true vocal cord extending to the anterior commissure, which results in impaired vocal cord mobility. Importantly, there is no invasion through the thyroid cartilage noted, confirming the T2 categorization.
+
+2. **Regional Lymph Nodes (N):** The clinical assessment shows N0 as there is no radiographic evidence of regional lymph node metastasis. This is supported by the CT findings, which indicate multiple small right level II and III lymph nodes without definite evidence of metastatic involvement.
+
+3. **Distant Metastasis (M):** The patient is classified as M0 since there is no evidence of distant metastasis following the imaging studies of the chest, abdomen, and pelvis.
+
+Combining these evaluations leads to the clinical stage designation of cT2N0M0, corresponding to Stage II Squamous Cell Carcinoma of the Larynx (Glottis).
+
+On the other hand, the pathologic stage is marked as ""Insufficient information"" because the medical note provides details primarily about the clinical staging and does not include definitive pathologic data to classify tumor (pT) or lymph node involvement (pN). A pathology report confirming any invasion, thyroid cartilage involvement, or any positive lymph nodes post-surgical intervention would be necessary to assign a pathologic stage. Currently, the histopathology summary mentions ""well to moderately differentiated squamous cell carcinoma"" but lacks specific details regarding pathologic staging or lymphovascular invasion necessary for a comprehensive assessment.
+
+Therefore, while the clinical staging is clear and well-defined, the pathologic stage remains undetermined until further information is acquired post-treatment.","---
+**Cancer Staging Report**
+
+**Patient Information:**  
+- **Diagnosis:** Squamous Cell Carcinoma of the Larynx (Category: Laryngeal Carcinoma)  
+- **Medical Record Number:** [MRN Placeholder]  
+- **Date of Report:** [Insert Date]  
+- **Author of Report:** [Author Name, Credentials]  
+
+---
+
+### 1. Case Summary
+The patient presents with a Squamous Cell Carcinoma of the Larynx, specifically involving the right true vocal cord. Clinical evaluation has determined the extent of the tumor and its regional lymphatic involvement as well as the absence of distant metastasis, leading to the classification of the cancer stage.
+
+### 2. TNM Classification
+**Clinical Classification (c):**
+- **T (Primary Tumor):** cT2  
+- **N (Regional Lymph Nodes):** cN0  
+- **M (Distant Metastasis):** cM0  
+
+**Pathologic Classification (p):**  
+- **Pathologic T:** Insufficient information available  
+- **Pathologic N:** Insufficient information available  
+- **Pathologic M:** Insufficient information available  
+
+### 3. Overall Stage
+**Clinical Stage:** cT2N0M0  
+**Stage Grouping:** Stage II Squamous Cell Carcinoma of the Larynx (Glottis)  
+**Pathologic Stage:** Insufficient information
+
+### 4. Key Findings that Determined the Stage
+- **T Category:**  
+  - Clinical assessment classified the T category as T2. The medical documentation reports a 2.7 cm mass involving the right true vocal cord that extends to the anterior commissure while noting no invasion through the thyroid cartilage.
+  
+- **N Category:**  
+  - Classified as N0 based on the absence of radiographic evidence for regional lymph node metastasis. CT imaging specifically ruled out definitive metastasis to nearby lymph nodes.
+  
+- **M Category:**  
+  - Classified as M0, supported by comprehensive imaging studies showing no signs of distant metastasis in the chest, abdomen, or pelvis.
+
+### 5. Important Prognostic Factors
+- The tumor's differentiation is noted to be ""well to moderately differentiated,"" which is generally associated with a better prognosis.
+- The absence of lymph node involvement (N0) and distant metastasis (M0) contributes positively to the patient’s overall prognosis.
+
+### 6. Limitations or Uncertainties in Staging Determination
+- The pathologic staging is currently marked as ""Insufficient information."" This is due to the lack of definitive pathologic data regarding the tumor characteristics (pT) and any assessment of regional lymph nodes (pN). Detailed pathology reports post-surgical intervention will be necessary to fully characterize the disease and assign a definitive pathologic stage. 
+
+**Recommendation:** Continuous follow-up is vital post-treatment, including surgical pathology assessment, to ensure a complete understanding of potential stage changes based on tissue evaluation.
+
+---
+
+**This report is generated for inclusion in the patient’s medical records and should be reviewed in conjunction with all other clinical information available for comprehensive care planning.**  
+
+[Signature Block]  
+[Author Name]  
+[Title]  
+[Contact Information]  
+[Institution or Practice Name]  
+
+---"

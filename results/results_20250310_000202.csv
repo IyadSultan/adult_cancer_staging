@@ -1,0 +1,77 @@
+Medical Note,Date of Extraction,Disease,Category,System,TNM Values,Extracted Stage,Clinical Stage,Pathologic Stage,AI Stage,Proceed with Staging,Explanation,Report
+hn_example.txt,2025-03-10,Squamous Cell Carcinoma of the Larynx,Laryngeal Carcinoma,AJCC8 system,cT2N0M0,cT2N0M0,"cT2N0M0, Stage II Squamous Cell Carcinoma of the Larynx (Glottis)",Insufficient information,"Clinical: cT2N0M0, Stage II Squamous Cell Carcinoma of the Larynx (Glottis), Pathologic: Insufficient information",Yes,"**Clinical Stage Determination:**  
+- **Primary Tumor (T)**: The lesion is classified as cT2 because it involves the right true vocal cord and extends to the anterior commissure, measuring 2.7 cm. According to AJCC criteria, T2 is defined for tumors that are larger than 1 cm but less than or equal to 3 cm in greatest dimension, with involvement of the vocal cord(s) but no extension to the supraglottis or subglottis.
+  
+- **Regional Lymph Nodes (N)**: The classification is cN0 due to the absence of clinically evident lymph node metastasis. Imaging demonstrated multiple small right level II and III lymph nodes but none exhibited definite evidence of metastasis. Therefore, N0 is appropriate.
+  
+- **Distant Metastasis (M)**: Classified as cM0 as the imaging studies show no evidence of distant metastasis.
+
+Combining these findings aligns with the AJCC 8th Edition staging categories: cT2N0M0 results in a Stage II designation for Squamous Cell Carcinoma of the Larynx.
+
+**Pathologic Stage Determination:**  
+Currently, the patient has not undergone surgical treatment, thus no pathologic staging can be established at this time. Pathology findings from surgical intervention will be necessary to classify pT, pN, and pM stages definitively. 
+
+- The biopsy shows well to moderately differentiated squamous cell carcinoma, which is relevant but not conclusive for staging until surgical management occurs and further pathology assessments can be made.  
+- No lymphovascular invasion was observed in the biopsy specimen, which supports the expectation of pN0 if lymph nodes are untouched.
+
+In conclusion, the clinical stage is well defined as cT2N0M0, while the pathologic stage remains insufficient until post-treatment pathological evaluations are completed.","**Cancer Staging Report**
+
+**Patient Information:**  
+- **Diagnosis:** Squamous Cell Carcinoma of the Larynx (Category: Laryngeal Carcinoma)  
+- **TNM Classification:** cT2N0M0  
+
+---
+
+**1. Brief Summary of the Case:**  
+This report details the clinical staging for a patient diagnosed with Squamous Cell Carcinoma of the Larynx, specifically involving the right true vocal cord with impaired mobility and extending towards the anterior commissure. The patient has not yet undergone surgical intervention, thus the pathologic stage is currently insufficient for determination.
+
+---
+
+**2. TNM Classification:**  
+- **Clinical T (cT):**  
+   - **Category:** cT2  
+   - **Evidence:** Clinical T2 classification is supported by imaging findings indicating a tumor measuring approximately 2.7 cm on the right true vocal cord, extending to the anterior commissure. The involvement of vocal cords but without extension to supraglottic or subglottic regions adheres to AJCC criteria for T2.
+
+- **Clinical N (cN):**  
+   - **Category:** cN0  
+   - **Evidence:** Multiple small right level II and III lymph nodes were identified, with the largest measuring 0.8 cm and none showing definite radiographic evidence of metastatic involvement leading to the classification of N0.
+
+- **Clinical M (cM):**  
+   - **Category:** cM0  
+   - **Evidence:** Imaging (CT of chest/abdomen/pelvis) reveals no evidence of distant metastatic disease, confirming classification as M0.
+
+---
+
+**3. Overall Stage:**  
+- **Clinical Stage:**  
+   - cT2N0M0, Stage II Squamous Cell Carcinoma of the Larynx (Glottis).
+
+---
+
+**4. Key Findings that Determined the Stage:**  
+- The primary tumor's involvement of the vocal cord and direct measurement correspond to the criteria for T2 classification.  
+- Absence of regional lymph node metastasis correlates with the cN0 classification.  
+- Imaging confirms no distant metastasis, leading to the cM0 determination.  
+Therefore, these findings collectively define the clinical stage as Stage II.
+
+---
+
+**5. Important Prognostic Factors:**  
+- **Smoking History:** The patient has a significant smoking history of 40 pack-years, which is a recognized risk factor potentially impacting prognosis and treatment decisions.  
+- **Alcohol Use:** Moderate alcohol consumption noted, adding another layer to the risk profile.
+
+---
+
+**6. Limitations or Uncertainties in Staging Determination:**  
+- The pathologic stage remains unestablished at present, pending surgical intervention and subsequent pathology assessments post-treatment. The current classification is subject to change based on surgical findings and histological evaluation. As such, definitive pT, pN, and pM classifications are pending.  
+- The biopsy indicated well to moderately differentiated squamous cell carcinoma, a finding relevant for prognosis but not sufficient alone for staging until definitive measures are undertaken.
+
+---
+
+**Conclusion:**  
+The clinical assessment for this patient indicates a staging of cT2N0M0, corresponding to Stage II Squamous Cell Carcinoma of the Larynx. Further pathologic evaluation post-surgery will be necessary for a complete staging framework.
+
+---
+
+**Date of Report:** [Insert Date]  
+**Prepared by:** [Insert Name, Credentials]"

@@ -1,0 +1,58 @@
+Instructions for LLM Interpretation and Application
+1. Identify Cancer Type: The LLM should first determine the specific cancer type involved from the input (e.g., from a description of the tumor location, pathology, or an explicit cancer name in a question). Use the JSON key that exactly matches that cancer (or the nearest match, since some entries cover multiple related sites, like ovary with fallopian tube, oropharynx HPV+ vs HPV-). For example, if the case is about “stage II colon cancer,” use the "Colon & Rectum" entry; if it’s “T2N1 breast cancer,” use the "Breast" entry, etc. 2. Determine Clinical vs Pathologic Context: Ascertain whether the scenario is referring to clinical staging (cTNM, typically before surgery, based on imaging/exam) or pathologic staging (pTNM, after surgical resection and histopathology). Clues: terms like biopsy only, imaging shows... imply clinical; after surgery, pathology revealed... implies pathologic. Use the corresponding section of the JSON:
+If the input explicitly gives a prefix (like “cT2 cN1 cM0” vs “pT2 pN1 pM0”), use the appropriate section.
+If unspecified, default to clinical if it seems pre-treatment, or pathologic if post-surgical. In ambiguous cases, you might retrieve both and clarify.
+3. Map TNM Categories: Using the relevant JSON section:
+Match the given T category with the JSON "T" definitions. If the input provides a detailed description (e.g., “tumor 3 cm, no extrathyroid extension” for thyroid), the LLM may need to determine that corresponds to a specific T code by comparing to the definitions.
+The JSON provides size cutoffs and extension criteria. The LLM should check each possible T and see where the description fits. (For example, a 3 cm breast tumor with chest wall invasion corresponds to T4a by definition).
+Subcategories: If an exact subcategory is given (like T1c), look under the "subcategories" of T1. If not given, the LLM might infer it if enough detail is provided (e.g., “tumor 1.5 cm” in breast is T1c). However, usually, staging input will directly provide T/N categories or enough info to assign them.
+Match the given N category similarly under "N". Pay attention to whether it's clinical or pathologic N (pathologic N might consider number of nodes and extranodal extension, which are detailed in the "pathologic" section).
+Match M category (almost always M0 or M1, with possible a/b/c subdivisions in certain cancers).
+If any additional categories apply (e.g., Grade for some staging, S for testis, FIGO stage given instead of TNM, etc.), retrieve those from the JSON as well.
+Example: If input is “pT2 N1 M0 colon cancer”, the LLM finds in "Colon & Rectum" under "pathologic" that T2 = tumor invades muscularis propria, N1 = 1-3 nodes positive​
+FILE-6NXMPMOKLG3PCPBJ6N9UWY
+, M0 = no mets. It will use these for staging.
+4. Determine Stage Group: Once the T, N, M (and any additional factors) are identified:
+Look up the "Stage_Groupings" in the JSON for that cancer and the appropriate context (clinical/pathologic). The stage groupings are often given as a list of criteria combinations for each stage.
+Find which stage grouping criteria match the combination. The JSON is structured to facilitate this:
+Some provide explicit combos (like lung, colon above). The LLM should check each stage in order (usually from earliest to latest) to see where the TNM fits. Often, an exact match or a described condition will be found.
+If multiple criteria lines are listed, ensure all conditions match (T category in list, N in list, M in list, and sometimes additional like Grade).
+Example: In breast cancer prognostic stage, if given “T2 N1 M0, Grade 3, ER-/PR-/HER2-”, the LLM would go to "Breast" -> "Prognostic Stage Groupings" and find where T2 N1 M0 with those receptor statuses fits (in AJCC 8th, that would likely be Stage IIIA or IIIB depending on biomarker combination). The JSON would list the combinations (the example snippet in the Breast section shows a portion of the table with columns G, HER2, ER, PR, mapping to stage​
+FILE-6NXMPMOKLG3PCPBJ6N9UWY
+).
+If an alternative staging system is asked (e.g., “Ann Arbor stage for Hodgkin lymphoma with those lymph node sites and B symptoms”), the LLM should use the "Ann_Arbor_stage" definitions. For instance, diffuse involvement of lymph nodes on both sides of the diaphragm with fever -> Stage III B​
+RADIOPAEDIA.ORG
+​
+RADIOPAEDIA.ORG
+.
+If FIGO stage is requested or described (common in gyn cases: e.g., “FIGO Stage IIB cervical cancer”), the LLM should cross-reference the "FIGO_stages" for that cancer. The JSON lists FIGO definitions; the LLM can confirm that matches “parametrial involvement without pelvic wall contact,” which corresponds to Stage IIB​
+MERCKMANUALS.COM
+​
+MERCKMANUALS.COM
+.
+5. Provide the Stage or Interpretation: After determining the stage, the LLM should output the stage group (e.g., “Stage IIIA (pathologic)” or “Ann Arbor IIIB”) as required, and possibly explain which criteria led there if an explanation is needed. The JSON data can be used to justify each part:
+For instance: “Colon cancer pT3 N1 M0 corresponds to Stage IIIA (AJCC 8th) because the tumor invades through the muscularis propria (T3) with 1-3 lymph nodes positive (N1) and no distant mets​
+FILE-6NXMPMOKLG3PCPBJ6N9UWY
+. Stage IIIA covers T1-2 N1 or T3 N0 in AJCC 8th, but colon pT3 N1 falls under Stage IIIB actually (checking JSON above, pT3 N1 is listed as IIIB).” So the LLM must be careful to use the correct mapping from the JSON, as our example shows Stage IIIB for T3N1. Always rely on the provided mapping rather than general intuition, as staging rules can be nuanced.
+6. No Cross-Cancer Assumptions: The LLM should avoid applying staging criteria from one cancer to another. Each entry is self-contained, so only use the definitions within that entry. For example, “T2N1” means different things in breast vs lung vs colon. Use the appropriate section:
+If the user provides a TNM without context, ask or use context to identify the cancer type, because staging only makes sense in context of a specific cancer’s schema.
+If multiple cancers are mentioned (e.g., a metastasis scenario or comparison), handle each separately with its JSON data.
+7. Handling Ambiguities or Special Cases: If the input data is incomplete or ambiguous (e.g., “T2 N0” but not stating clinical or pathologic or which cancer):
+The LLM should clarify or make a reasonable assumption (perhaps assume most common context).
+If a value falls on a borderline (like a 2 cm tumor in breast could be T1 or T2 depending on exact cutoff), the LLM should note the exact cutoff from JSON (e.g., breast T1 is up to 2 cm inclusive, T2 is >2 cm​
+FILE-6NXMPMOKLG3PCPBJ6N9UWY
+). So a “2.0 cm” tumor likely T1c, whereas “2.1 cm” is T2.
+Ensure to use the “uncertain rule” if mentioned in JSON notes (some sites note if info is missing, assign the lower category​
+FILE-6NXMPMOKLG3PCPBJ6N9UWY
+).
+8. Additional Classification Usage: If asked to provide staging in multiple systems (like both TNM and FIGO), the LLM can retrieve both:
+For a gynecologic cancer, convert TNM to FIGO or vice versa using the JSON (since both are listed and essentially mapped). E.g., Stage IIB cervical cancer is T2b N0 M0​
+MERCKMANUALS.COM
+, which the JSON for cervix shows.
+For lymphoma, if someone asks “What is Stage IIIE?”, the LLM sees Ann Arbor Stage III with E (extranodal) means both sides of diaphragm plus a contiguous extranodal site​
+RADIOPAEDIA.ORG
+.
+9. Verification and Citation: The LLM can use the JSON as ground truth for staging rules. If explaining an answer, it can cite the source by referring to the JSON content (or underlying references, such as AJCC manual pages) to ensure accuracy. For instance, if asked “What qualifies as T4 in breast cancer?”, the LLM answers with the JSON definition (“Tumor of any size with extension to chest wall or skin, e.g., T4a = chest wall invasion​
+FILE-6NXMPMOKLG3PCPBJ6N9UWY
+”) referencing the manual or JSON content. 10. Updates and Editions: Note that this JSON is based on AJCC 8th Edition (2017). If the user query suggests a different edition or system (like AJCC 7th, or FIGO 2018 updates), clarify and ensure using the correct data. The JSON can be updated accordingly but the LLM should respond based on the data it has (which is 8th edition here). Always mention if using 8th edition when there might be discrepancy. By following these instructions and utilizing the structured JSON, the LLM will systematically produce accurate cancer staging information or interpretations. The JSON serves as a knowledge base: the LLM matches input conditions to the structured criteria, rather than relying on potentially imperfect memory. This ensures consistency with authoritative definitions (AJCC, FIGO, etc.), as evidenced by the citations (e.g., AJCC manual and other sources) embedded in the JSON entries for validation​
+RADIOPAEDIA.ORG

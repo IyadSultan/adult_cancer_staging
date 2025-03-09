@@ -1,5 +1,5 @@
-from .staging_module import PediatricCancerStaging
-from .agents import CancerStagingAgents
-from .tasks import CancerStagingTasks
+from .adult_staging_module import AdultCancerStaging
+from .adult_agents import AdultCancerStagingAgents
+from .adult_tasks import AdultCancerStagingTasks
 
-__all__ = ['PediatricCancerStaging', 'CancerStagingAgents', 'CancerStagingTasks'] 
+__all__ = ['AdultCancerStaging', 'AdultCancerStagingAgents', 'AdultCancerStagingTasks'] 

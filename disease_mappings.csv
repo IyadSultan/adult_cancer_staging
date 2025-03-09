@@ -1,0 +1,372 @@
+disease_variation,canonical_category
+# Head and Neck cancers
+laryngeal carcinoma,Laryngeal Carcinoma
+laryngeal cancer,Laryngeal Carcinoma
+larynx carcinoma,Laryngeal Carcinoma
+larynx cancer,Laryngeal Carcinoma
+glottic carcinoma,Laryngeal Carcinoma
+glottic cancer,Laryngeal Carcinoma
+vocal cord carcinoma,Laryngeal Carcinoma
+vocal cord cancer,Laryngeal Carcinoma
+squamous cell carcinoma of the larynx,Laryngeal Carcinoma
+squamous cell carcinoma of the glottis,Laryngeal Carcinoma
+squamous cell carcinoma of larynx,Laryngeal Carcinoma
+carcinoma of the larynx,Laryngeal Carcinoma
+glottic laryngeal carcinoma,Laryngeal Carcinoma
+supraglottic carcinoma,Laryngeal Carcinoma
+transglottic carcinoma,Laryngeal Carcinoma
+subglottic carcinoma,Laryngeal Carcinoma
+cancer of the voice box,Laryngeal Carcinoma
+
+# Oral cavity cancers
+oral cavity cancer,Oral Cavity
+oral cavity carcinoma,Oral Cavity
+oral cancer,Oral Cavity
+mouth cancer,Oral Cavity
+tongue cancer,Oral Cavity
+floor of mouth cancer,Oral Cavity
+buccal mucosa cancer,Oral Cavity
+gingival cancer,Oral Cavity
+hard palate cancer,Oral Cavity
+lip cancer,Lip
+squamous cell carcinoma of the oral cavity,Oral Cavity
+scc of the oral cavity,Oral Cavity
+carcinoma of the mouth,Oral Cavity
+carcinoma of the tongue,Oral Cavity
+carcinoma of the floor of mouth,Oral Cavity
+
+# Oropharynx cancers
+oropharyngeal cancer,Oropharynx (HPV-positive)
+oropharynx cancer,Oropharynx (HPV-positive)
+oropharynx carcinoma,Oropharynx (HPV-positive)
+cancer of the oropharynx,Oropharynx (HPV-positive)
+tonsil cancer,Oropharynx (HPV-positive)
+base of tongue cancer,Oropharynx (HPV-positive)
+soft palate cancer,Oropharynx (HPV-positive)
+pharyngeal wall cancer,Oropharynx (HPV-positive)
+hpv positive oropharyngeal cancer,Oropharynx (HPV-positive)
+hpv+ oropharyngeal cancer,Oropharynx (HPV-positive)
+hpv negative oropharyngeal cancer,Oropharynx (HPV-negative)
+hpv- oropharyngeal cancer,Oropharynx (HPV-negative)
+p16 positive oropharyngeal cancer,Oropharynx (HPV-positive)
+p16+ oropharyngeal cancer,Oropharynx (HPV-positive)
+p16 negative oropharyngeal cancer,Oropharynx (HPV-negative)
+p16- oropharyngeal cancer,Oropharynx (HPV-negative)
+squamous cell carcinoma of the oropharynx,Oropharynx (HPV-positive)
+
+# Hypopharynx cancers
+hypopharynx cancer,Oropharynx (HPV-negative) / Hypopharynx
+hypopharyngeal cancer,Oropharynx (HPV-negative) / Hypopharynx
+hypopharynx carcinoma,Oropharynx (HPV-negative) / Hypopharynx
+cancer of the hypopharynx,Oropharynx (HPV-negative) / Hypopharynx
+piriform sinus cancer,Oropharynx (HPV-negative) / Hypopharynx
+postcricoid cancer,Oropharynx (HPV-negative) / Hypopharynx
+posterior pharyngeal wall cancer,Oropharynx (HPV-negative) / Hypopharynx
+squamous cell carcinoma of the hypopharynx,Oropharynx (HPV-negative) / Hypopharynx
+
+# Nasopharynx cancers
+nasopharynx cancer,Nasopharynx
+nasopharyngeal cancer,Nasopharynx
+nasopharynx carcinoma,Nasopharynx
+nasopharyngeal carcinoma,Nasopharynx
+cancer of the nasopharynx,Nasopharynx
+npc,Nasopharynx
+epstein-barr virus associated nasopharyngeal carcinoma,Nasopharynx
+ebv+ nasopharyngeal carcinoma,Nasopharynx
+squamous cell carcinoma of the nasopharynx,Nasopharynx
+
+# Nasal cavity and paranasal sinuses
+nasal cavity cancer,Nasal Cavity & Paranasal Sinuses
+nasal cavity carcinoma,Nasal Cavity & Paranasal Sinuses
+paranasal sinus cancer,Nasal Cavity & Paranasal Sinuses
+paranasal sinus carcinoma,Nasal Cavity & Paranasal Sinuses
+maxillary sinus cancer,Nasal Cavity & Paranasal Sinuses
+ethmoid sinus cancer,Nasal Cavity & Paranasal Sinuses
+sphenoid sinus cancer,Nasal Cavity & Paranasal Sinuses
+frontal sinus cancer,Nasal Cavity & Paranasal Sinuses
+sinonasal cancer,Nasal Cavity & Paranasal Sinuses
+squamous cell carcinoma of the nasal cavity,Nasal Cavity & Paranasal Sinuses
+sinonasal squamous cell carcinoma,Nasal Cavity & Paranasal Sinuses
+
+# Salivary gland cancers
+salivary gland cancer,Major Salivary Glands
+salivary gland carcinoma,Major Salivary Glands
+parotid gland cancer,Major Salivary Glands
+submandibular gland cancer,Major Salivary Glands
+sublingual gland cancer,Major Salivary Glands
+parotid cancer,Major Salivary Glands
+mucoepidermoid carcinoma,Major Salivary Glands
+adenoid cystic carcinoma,Major Salivary Glands
+acinic cell carcinoma,Major Salivary Glands
+salivary duct carcinoma,Major Salivary Glands
+adenocarcinoma of the salivary gland,Major Salivary Glands
+salivary gland tumor,Major Salivary Glands
+
+# Thyroid cancers
+thyroid cancer,Thyroid
+thyroid carcinoma,Thyroid
+papillary thyroid carcinoma,Thyroid
+papillary thyroid cancer,Thyroid
+follicular thyroid carcinoma,Thyroid
+follicular thyroid cancer,Thyroid
+medullary thyroid carcinoma,Thyroid
+medullary thyroid cancer,Thyroid
+anaplastic thyroid carcinoma,Thyroid
+anaplastic thyroid cancer,Thyroid
+poorly differentiated thyroid carcinoma,Thyroid
+thyroid nodule,Thyroid
+hurthle cell carcinoma,Thyroid
+
+# Skin cancers of head and neck
+cutaneous squamous cell carcinoma of head and neck,Cutaneous Squamous Cell Carcinoma of Head & Neck
+cutaneous scc of head and neck,Cutaneous Squamous Cell Carcinoma of Head & Neck
+skin cancer of the head and neck,Cutaneous Squamous Cell Carcinoma of Head & Neck
+head and neck cutaneous scc,Cutaneous Squamous Cell Carcinoma of Head & Neck
+squamous cell skin cancer of head and neck,Cutaneous Squamous Cell Carcinoma of Head & Neck
+face skin cancer,Cutaneous Squamous Cell Carcinoma of Head & Neck
+ear skin cancer,Cutaneous Squamous Cell Carcinoma of Head & Neck
+scalp skin cancer,Cutaneous Squamous Cell Carcinoma of Head & Neck
+neck skin cancer,Cutaneous Squamous Cell Carcinoma of Head & Neck
+
+# Breast cancers
+breast cancer,Breast
+breast carcinoma,Breast
+invasive ductal carcinoma,Breast
+invasive lobular carcinoma,Breast
+ductal carcinoma in situ,Breast
+dcis,Breast
+lobular carcinoma in situ,Breast
+lcis,Breast
+triple negative breast cancer,Breast
+her2 positive breast cancer,Breast
+er positive breast cancer,Breast
+pr positive breast cancer,Breast
+inflammatory breast cancer,Breast
+paget's disease of the breast,Breast
+metaplastic breast cancer,Breast
+
+# Lung cancers
+lung cancer,Lung
+lung carcinoma,Lung
+non-small cell lung cancer,Lung
+nsclc,Lung
+small cell lung cancer,Lung
+sclc,Lung
+adenocarcinoma of the lung,Lung
+squamous cell carcinoma of the lung,Lung
+large cell carcinoma of the lung,Lung
+bronchoalveolar carcinoma,Lung
+carcinoid tumor of the lung,Lung
+mesothelioma,Lung
+lung nodule,Lung
+
+# Colorectal cancers
+colorectal cancer,Colon & Rectum
+colon cancer,Colon & Rectum
+rectal cancer,Colon & Rectum
+colorectal carcinoma,Colon & Rectum
+colon carcinoma,Colon & Rectum
+rectal carcinoma,Colon & Rectum
+cancer of the colon,Colon & Rectum
+cancer of the rectum,Colon & Rectum
+adenocarcinoma of the colon,Colon & Rectum
+adenocarcinoma of the rectum,Colon & Rectum
+sigmoid colon cancer,Colon & Rectum
+ascending colon cancer,Colon & Rectum
+descending colon cancer,Colon & Rectum
+transverse colon cancer,Colon & Rectum
+rectal adenocarcinoma,Colon & Rectum
+colorectal polyp,Colon & Rectum
+
+# Gastric cancers
+gastric cancer,Stomach
+stomach cancer,Stomach
+gastric carcinoma,Stomach
+stomach carcinoma,Stomach
+gastric adenocarcinoma,Stomach
+intestinal type gastric cancer,Stomach
+diffuse type gastric cancer,Stomach
+linitis plastica,Stomach
+gastroesophageal junction cancer,Esophagus
+gej cancer,Esophagus
+gastric lymphoma,Stomach
+gastrointestinal stromal tumor,GIST
+
+# Esophageal cancers
+esophageal cancer,Esophagus
+esophagus cancer,Esophagus
+esophageal carcinoma,Esophagus
+squamous cell carcinoma of the esophagus,Esophagus
+adenocarcinoma of the esophagus,Esophagus
+barrett's esophagus,Esophagus
+esophageal stricture,Esophagus
+esophageal tumor,Esophagus
+
+# Liver and biliary cancers
+hepatocellular carcinoma,Liver
+hcc,Liver
+liver cancer,Liver
+hepatoma,Liver
+cholangiocarcinoma,Bile Ducts
+bile duct cancer,Bile Ducts
+intrahepatic cholangiocarcinoma,Bile Ducts
+extrahepatic cholangiocarcinoma,Bile Ducts
+gallbladder cancer,Gallbladder
+gallbladder carcinoma,Gallbladder
+
+# Pancreatic cancers
+pancreatic cancer,Pancreas
+pancreatic carcinoma,Pancreas
+pancreatic adenocarcinoma,Pancreas
+ductal adenocarcinoma of the pancreas,Pancreas
+pancreatic neuroendocrine tumor,Pancreas
+islet cell tumor,Pancreas
+pancreatic cyst,Pancreas
+intraductal papillary mucinous neoplasm,Pancreas
+ipnm,Pancreas
+mucinous cystic neoplasm,Pancreas
+pancreatic pseudocyst,Pancreas
+
+# Genitourinary cancers
+kidney cancer,Kidney
+renal cell carcinoma,Kidney
+rcc,Kidney
+renal mass,Kidney
+renal cyst,Kidney
+bladder cancer,Urinary Bladder
+bladder carcinoma,Urinary Bladder
+transitional cell carcinoma of the bladder,Urinary Bladder
+urothelial carcinoma,Urinary Bladder
+prostate cancer,Prostate
+prostate carcinoma,Prostate
+prostatic adenocarcinoma,Prostate
+testicular cancer,Testis
+testis cancer,Testis
+testicular germ cell tumor,Testis
+seminoma,Testis
+nonseminoma,Testis
+penile cancer,Penis
+penile carcinoma,Penis
+squamous cell carcinoma of the penis,Penis
+
+# Gynecologic cancers
+cervical cancer,Cervix
+cervical carcinoma,Cervix
+cervix cancer,Cervix
+cancer of the cervix,Cervix
+squamous cell carcinoma of the cervix,Cervix
+endometrial cancer,Endometrium
+endometrial carcinoma,Endometrium
+uterine cancer,Endometrium
+uterine carcinoma,Endometrium
+cancer of the uterus,Endometrium
+ovarian cancer,Ovary
+ovarian carcinoma,Ovary
+epithelial ovarian cancer,Ovary
+ovarian serous carcinoma,Ovary
+ovarian mucinous carcinoma,Ovary
+ovarian endometrioid carcinoma,Ovary
+ovarian clear cell carcinoma,Ovary
+vulvar cancer,Vulva
+vaginal cancer,Vagina
+
+# Skin cancers
+melanoma,Melanoma (Skin)
+malignant melanoma,Melanoma (Skin)
+cutaneous melanoma,Melanoma (Skin)
+skin melanoma,Melanoma (Skin)
+lentigo maligna melanoma,Melanoma (Skin)
+superficial spreading melanoma,Melanoma (Skin)
+nodular melanoma,Melanoma (Skin)
+acral lentiginous melanoma,Melanoma (Skin)
+squamous cell carcinoma of the skin,Cutaneous Squamous Cell Carcinoma
+basal cell carcinoma,Merkel Cell Carcinoma
+merkel cell carcinoma,Merkel Cell Carcinoma
+skin cancer,Cutaneous Squamous Cell Carcinoma
+
+# Hematologic malignancies
+leukemia,Leukemia
+acute myeloid leukemia,Leukemia
+aml,Leukemia
+acute lymphoblastic leukemia,Leukemia
+all,Leukemia
+chronic myeloid leukemia,Leukemia
+cml,Leukemia
+chronic lymphocytic leukemia,Leukemia
+cll,Leukemia
+lymphoma,Lymphoma
+hodgkin lymphoma,Lymphoma
+non-hodgkin lymphoma,Lymphoma
+diffuse large b-cell lymphoma,Lymphoma
+dlbcl,Lymphoma
+follicular lymphoma,Lymphoma
+mantle cell lymphoma,Lymphoma
+burkitt lymphoma,Lymphoma
+marginal zone lymphoma,Lymphoma
+multiple myeloma,Multiple Myeloma
+plasma cell myeloma,Multiple Myeloma
+myelodysplastic syndrome,MDS
+mds,MDS
+
+# Bone and soft tissue cancers
+bone cancer,Bone
+osteosarcoma,Bone
+chondrosarcoma,Bone
+ewing sarcoma,Bone
+soft tissue sarcoma,Soft Tissue Sarcoma
+liposarcoma,Soft Tissue Sarcoma
+leiomyosarcoma,Soft Tissue Sarcoma
+rhabdomyosarcoma,Soft Tissue Sarcoma
+angiosarcoma,Soft Tissue Sarcoma
+fibrosarcoma,Soft Tissue Sarcoma
+malignant peripheral nerve sheath tumor,Soft Tissue Sarcoma
+mpnst,Soft Tissue Sarcoma
+gastrointestinal stromal tumor,GIST
+gist,GIST
+
+# CNS tumors
+brain tumor,Brain
+brain cancer,Brain
+glioma,Brain
+glioblastoma,Brain
+gbm,Brain
+astrocytoma,Brain
+oligodendroglioma,Brain
+meningioma,Brain
+medulloblastoma,Brain
+ependymoma,Brain
+pituitary adenoma,Brain
+acoustic neuroma,Brain
+vestibular schwannoma,Brain
+craniopharyngioma,Brain
+central nervous system lymphoma,Brain
+primary cns lymphoma,Brain
+spinal cord tumor,Spine
+
+# Neuroendocrine tumors
+neuroendocrine tumor,Neuroendocrine Tumors
+net,Neuroendocrine Tumors
+carcinoid tumor,Neuroendocrine Tumors
+carcinoid syndrome,Neuroendocrine Tumors
+small cell carcinoma,Neuroendocrine Tumors
+large cell neuroendocrine carcinoma,Neuroendocrine Tumors
+pancreatic neuroendocrine tumor,Neuroendocrine Tumors
+pnet,Neuroendocrine Tumors
+merkel cell carcinoma,Merkel Cell Carcinoma
+
+# Others
+adrenal cancer,Adrenal
+adrenocortical carcinoma,Adrenal
+pheochromocytoma,Adrenal
+paraganglioma,Adrenal
+thymoma,Thymus
+thymic carcinoma,Thymus
+malignant pleural mesothelioma,Mesothelioma
+peritoneal mesothelioma,Mesothelioma
+gestational trophoblastic disease,GTD
+choriocarcinoma,GTD
+unknown primary cancer,CUP
+cancer of unknown primary,CUP
+cup,CUP
+metastatic cancer of unknown primary,CUP
+occult primary,CUP 
