@@ -14,7 +14,6 @@ import datetime
 # Load environment variables
 load_dotenv()
 
-
 # disable crewai telemetry from https://www.reddit.com/r/crewai/comments/1cp5gby/how_can_i_disable_all_telemetry_in_crewai/
 from crewai.telemetry import Telemetry
 
@@ -27,18 +26,49 @@ def disable_crewai_telemetry():
             setattr(Telemetry, attr, noop)
 
 
-def setup_openai_api():
+def setup_azure_openai_api():
     """
-    Set up the OpenAI API key from environment variables.
+    Set up the Azure OpenAI API configuration from environment variables.
     """
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        print("Error: OPENAI_API_KEY environment variable not set.")
-        print("Please set your OpenAI API key in the .env file.")
-        print("You can run 'python setup_api_key.py' to set up your API key.")
+    # Get Azure OpenAI configuration
+    api_key = os.getenv("AZURE_API_KEY")
+    endpoint = os.getenv("AZURE_ENDPOINT")
+    api_version = os.getenv("AZURE_API_VERSION")
+    deployment = os.getenv("AZURE_GPT4O_DEPLOYMENT")
+    
+    if not api_key or not endpoint or not api_version or not deployment:
+        print("Error: Azure OpenAI API configuration is incomplete.")
+        print("Please ensure the following environment variables are set in the .env file:")
+        print("  - AZURE_API_KEY")
+        print("  - AZURE_ENDPOINT")
+        print("  - AZURE_API_VERSION")
+        print("  - AZURE_GPT4O_DEPLOYMENT")
         sys.exit(1)
     
+    # Set environment variables for Azure OpenAI
+    os.environ["AZURE_API_KEY"] = api_key
+    os.environ["AZURE_API_BASE"] = endpoint  # LiteLLM uses AZURE_API_BASE
+    os.environ["AZURE_API_VERSION"] = api_version
+    os.environ["AZURE_GPT4O_DEPLOYMENT"] = deployment
+    
+    # WORKAROUND: Set OpenAI API key to Azure API key to make LiteLLM work
+    # This is necessary because LiteLLM still looks for OPENAI_API_KEY in some cases
     os.environ["OPENAI_API_KEY"] = api_key
+    
+    # Set OpenAI base URL to Azure endpoint using LiteLLM expected format
+    os.environ["OPENAI_API_BASE"] = endpoint
+    os.environ["OPENAI_API_VERSION"] = api_version
+    os.environ["OPENAI_API_TYPE"] = "azure"
+    
+    # Print debug info
+    print(f"Azure OpenAI configuration set up successfully")
+    print(f"API Base: {endpoint}")
+    print(f"API Version: {api_version}")
+    print(f"Deployment: {deployment}")
+    
+    # Configure model for command line arguments - prepend azure/ to model name
+    # This is what LiteLLM expects for Azure OpenAI models
+    return f"azure/{deployment}"
 
 
 def create_project_status(results_csv_path, results_md_path):
@@ -55,7 +85,7 @@ def create_project_status(results_csv_path, results_md_path):
         status_content = f"""# Adult Cancer Staging Project Status
 
 ## Completed Steps
-- Created adult cancer staging module with CrewAI agents
+- Created adult cancer staging module with CrewAI agents using Azure OpenAI
 - Processed medical notes and extracted cancer type and staging information
 - Applied AJCC 8th Edition staging system to medical notes
 - Generated staging reports with clinical and pathologic stage explanations
@@ -66,6 +96,7 @@ def create_project_status(results_csv_path, results_md_path):
 - The staging module has successfully processed the provided cancer medical notes
 - Results are available in both CSV and markdown formats
 - The detailed markdown report includes full patient information, disease category, extracted stage, AI-determined stages, and complete medical notes
+- The project now uses Azure OpenAI API instead of OpenAI API
 
 ## Next Steps
 - Evaluate staging accuracy with clinical experts
@@ -78,12 +109,13 @@ def create_project_status(results_csv_path, results_md_path):
         status_content = f"""# Adult Cancer Staging Project Status
 
 ## Completed Steps
-- Created adult cancer staging module with CrewAI agents
+- Created adult cancer staging module with CrewAI agents using Azure OpenAI
 - Attempted to process cancer medical notes but encountered errors
 
 ## Current Status
 - The staging module encountered issues during processing
 - Results were not generated successfully
+- The project now uses Azure OpenAI API instead of OpenAI API
 
 ## Next Steps
 - Debug the staging module
@@ -114,8 +146,8 @@ def main():
     
     args = parser.parse_args()
     
-    # Set up OpenAI API
-    setup_openai_api()
+    # Set up Azure OpenAI API
+    model_name = setup_azure_openai_api()
     
     # Create results directory if it doesn't exist
     results_dir = os.path.dirname(args.output)
@@ -142,7 +174,7 @@ def main():
     # Create the staging module
     staging_module = AdultCancerStaging(
         staging_data_path=str(staging_data_path),
-        model=args.model,
+        model=model_name,
         mapping_csv_path=str(mapping_csv_path)
     )
     

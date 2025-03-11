@@ -1,5 +1,7 @@
 from crewai import Agent
 from typing import Dict, Any, List, Optional
+from .azure_openai_config import get_azure_openai_llm
+import os
 
 class AdultCancerStagingAgents:
     """
@@ -14,6 +16,12 @@ class AdultCancerStagingAgents:
             model (str): The OpenAI model to use
         """
         self.model = model
+        # Get the deployment name from environment variable
+        self.deployment_name = os.getenv("AZURE_GPT4O_DEPLOYMENT", model)
+        # Format model name for LiteLLM - azure/<deployment_name>
+        self.azure_model = f"azure/{self.deployment_name}" 
+        # Get Azure LLM for LangChain integration
+        self.llm = get_azure_openai_llm(model_name=model, deployment_name=self.deployment_name)
     
     def create_cancer_identifier_agent(self) -> Agent:
         """
@@ -34,7 +42,9 @@ class AdultCancerStagingAgents:
             before proceeding with staging.""",
             verbose=True,
             allow_delegation=False,
-            llm_config={"model": self.model}
+            llm=self.llm,
+            # For CrewAI direct integration - this is a fallback
+            llm_config={"model": self.azure_model}
         )
     
     def create_criteria_analyzer_agent(self) -> Agent:
@@ -54,7 +64,9 @@ class AdultCancerStagingAgents:
             particular cancer type, distinguishing between clinical and pathologic findings.""",
             verbose=True,
             allow_delegation=False,
-            llm_config={"model": self.model}
+            llm=self.llm,
+            # For CrewAI direct integration - this is a fallback
+            llm_config={"model": self.azure_model}
         )
     
     def create_stage_calculator_agent(self) -> Agent:
@@ -74,7 +86,9 @@ class AdultCancerStagingAgents:
             and stage groupings specific to different cancer types.""",
             verbose=True,
             allow_delegation=False,
-            llm_config={"model": self.model}
+            llm=self.llm,
+            # For CrewAI direct integration - this is a fallback
+            llm_config={"model": self.azure_model}
         )
     
     def create_report_generator_agent(self) -> Agent:
@@ -94,5 +108,7 @@ class AdultCancerStagingAgents:
             and explanations of how the stage was determined based on the AJCC 8th Edition criteria.""",
             verbose=True,
             allow_delegation=False,
-            llm_config={"model": self.model}
+            llm=self.llm,
+            # For CrewAI direct integration - this is a fallback
+            llm_config={"model": self.azure_model}
         ) 

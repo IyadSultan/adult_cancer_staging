@@ -1,0 +1,49 @@
+Medical Note,Date of Extraction,Disease,Category,System,TNM Values,Extracted Stage,Clinical Stage,Pathologic Stage,AI Stage,Proceed with Staging,Explanation,Report
+hn_example.txt,2025-03-11,Squamous Cell Carcinoma of the Right True Vocal Cord,Laryngeal Carcinoma,AJCC8 system,cT2N0M0,cT2N0M0,Not determined,Not determined,"Clinical: Not determined, Pathologic: Not determined",Yes,,"**Cancer Staging Report**  
+**Patient Information:**  
+- Age: [Non-identifying age]  
+- Gender: [Non-identifying gender]  
+- Date of Report: [Current date]  
+- Medical Record Number: [Non-identifying record number]  
+
+**Diagnosis:**  
+Squamous Cell Carcinoma of the Right True Vocal Cord (Category: Laryngeal Carcinoma)  
+
+**TNM Classification:**  
+- **Clinical Classification:**  
+  - **cT2:** Tumor is 2.7 cm, involving the right true vocal cord with impaired mobility, extending to the anterior commissure.  
+  - **cN0:** No radiographic evidence of regional lymph node metastasis.  
+  - **cM0:** No evidence of distant metastatic disease.  
+
+**Overall Clinical Stage:**  
+- **Stage II** (cT2N0M0)  
+
+**Key Findings that Determined the Stage:**  
+1. **Primary Tumor (T) Category:**  
+   - The tumor size measuring approximately 2.7 cm and its involvement with the anterior commissure supports the classification as T2, as it is greater than 2 cm but less than 4 cm. The impairment of vocal cord mobility is indicative of significant local invasion.  
+   - Supporting Evidence: ""Flexible laryngoscopy shows a 2.5 cm exophytic lesion of the right true vocal cord extending to the anterior commissure with impaired vocal cord mobility.""  
+
+2. **Regional Lymph Nodes (N) Category:**  
+   - The absence of radiographic evidence of regional lymph node metastasis confirms N0 status, despite the presence of small lymph nodes which are not indicative of metastatic disease.  
+   - Supporting Evidence: ""No radiographic evidence of regional lymph node metastasis.""  
+
+3. **Distant Metastasis (M) Category:**  
+   - The CT scan findings indicating no evidence of distant metastatic disease affirm the M0 classification.  
+   - Supporting Evidence: ""CT chest/abdomen/pelvis: No evidence of distant metastatic disease.""  
+
+**Important Prognostic Factors:**  
+- Histopathology shows well to moderately differentiated squamous cell carcinoma, which generally indicates a more favorable prognosis.  
+- No lymphovascular invasion was identified in the biopsy specimen, suggesting a lower risk of metastasis and potentially a better prognosis.  
+
+**Limitations or Uncertainties in the Staging Determination:**  
+- The clinical stage has not been confirmed pathologically due to the absence of definitive pathologic staging information at this time.  
+- Continuous monitoring and further evaluation may be necessary to ensure that the cancer has not progressed, particularly in regard to any potential future lymph node involvement.
+
+This staging report provides a comprehensive overview of the patient's squamous cell carcinoma of the right true vocal cord, incorporating all relevant clinical and pathologic findings according to the AJCC 8th Edition criteria. Further management should be guided by these findings, along with ongoing clinical evaluation.  
+
+**Prepared by:**  
+[Your Name]  
+[Your Title]  
+[Your Affiliation]  
+[Contact Information]  
+[Date]"
